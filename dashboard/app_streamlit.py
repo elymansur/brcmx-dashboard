@@ -1,37 +1,16 @@
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 from sqlalchemy import create_engine
 import os
 from dotenv import load_dotenv
-import hashlib
 from io import BytesIO
 
 st.set_page_config(layout="wide")
 st.image("dashboard/logo_brcmx.png", width=200)
 st.title("📦 Plataforma de Comércio Exterior - BRCMX")
 
-# --- LOGIN ---
-def check_login(username, password):
-    stored_username = "admin"
-    stored_password_hash = hashlib.sha256("brcmx123".encode()).hexdigest()
-    return username == stored_username and hashlib.sha256(password.encode()).hexdigest() == stored_password_hash
-
-if "authenticated" not in st.session_state:
-    st.session_state.authenticated = False
-
-if not st.session_state.authenticated:
-    st.sidebar.header("🔐 Acesso Restrito")
-    user = st.sidebar.text_input("Usuário")
-    pwd = st.sidebar.text_input("Senha", type="password")
-    if st.sidebar.button("Entrar"):
-        if check_login(user, pwd):
-            st.session_state.authenticated = True
-            st.experimental_rerun()
-        else:
-            st.sidebar.error("Usuário ou senha inválidos")
-    st.stop()
+# 🔓 LOGIN DESATIVADO TEMPORARIAMENTE
 
 # Conexão com PostgreSQL
 load_dotenv()
