@@ -4,3 +4,5 @@ data/
 *.zip
 update_pipeline.bat
 update_pipeline.shdashboard/.env 
+dashboard/.env 
+.env 
