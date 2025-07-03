@@ -3,4 +3,4 @@ data/
 *.csv
 *.zip
 update_pipeline.bat
-update_pipeline.sh
+update_pipeline.shdashboard/.env 
