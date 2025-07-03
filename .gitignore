@@ -1,0 +1,6 @@
+data/
+*.db
+*.csv
+*.zip
+update_pipeline.bat
+update_pipeline.sh
